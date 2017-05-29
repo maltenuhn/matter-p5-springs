@@ -1,11 +1,10 @@
-function Boundary(x, y, w, h) {
+function Boundary(x, y, w, h, angle_) {
   // this is a wrapper for the matter.js object
 
   var options = {
-    friction: 0.0,
-    restitution: .4,
+    
     isStatic: true,
-    angle: PI / 7
+    angle: angle_
   }
 
   this.body = Bodies.rectangle(x, y, w, h, options);

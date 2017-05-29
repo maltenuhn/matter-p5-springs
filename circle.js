@@ -2,8 +2,8 @@ function Circle(x, y, r) {
   // this is a wrapper for the matter.js object
 
   var options = {
-    friction: 0.4,
-    restitution: .4
+    friction: 0.01,
+    restitution: .04
   }
 
   this.body = Bodies.circle(x, y, r, options);
@@ -12,6 +12,7 @@ function Circle(x, y, r) {
   World.add(world, this.body);
 
   this.show = function() {
+
       var pos = this.body.position;
       var angle = this.body.angle;
       push()  ;
@@ -21,7 +22,6 @@ function Circle(x, y, r) {
         // console.log(255 * ((angle % 6.28) / 6.28 ));
         fill(255,0, 255 * ((Math.abs(angle) % Math.PI) / Math.PI ));
         ellipse(0,0,this.r * 2, this.r * 2);
-
 
       pop();
 

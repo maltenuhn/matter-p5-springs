@@ -12,11 +12,11 @@ var circles = [];
 var boundaries = [];
 
 function preload() {
-  ding = loadSound("beep.mp3");
+  // ding = loadSound("beep.mp3");
 }
 
 function mousePressed(){
-  ding.play();
+  // ding.play();
 
   var rand = random(0,2)
 
@@ -45,8 +45,13 @@ var setup = function(){
   world = engine.world;
   box1 = new Box(mouseX, 20, 50, 20);
 
-  tempBoundary = new Boundary(width / 2, height - 10, width, 20);
+  tempBoundary = new Boundary(width / 2, height - 10, width, 20, -Math.PI / 7);
   boundaries.push(tempBoundary);
+
+  tempBoundary = new Boundary(width / 3, height /2 , width / 3, 20, Math.PI / 7);
+  boundaries.push(tempBoundary);
+
+
 
   Engine.run(engine);
 
@@ -57,7 +62,7 @@ var setup = function(){
     for (var i = 0; i < pairs.length; i++){
         var bodyA = pairs[i].bodyA;
         var bodyB = pairs[i].bodyB;
-        console.log(bodyA.label, bodyB.label)
+        // console.log(bodyA.label, bodyB.label)
       }
   }
 

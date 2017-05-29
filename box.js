@@ -2,8 +2,8 @@ function Box(x, y, w, h) {
   // this is a wrapper for the matter.js object
 
   var options = {
-    friction: 0.0,
-    restitution: .4
+    friction: 0.01,
+    restitution: .04
   }
 
   this.body = Bodies.rectangle(x, y, w, h, options);
